@@ -1,6 +1,6 @@
 const quizdb = [
     {
-        question: "which language is used for styling our content?",
+        question: "1: Which language is used for styling our content?",
         a: "HTML",
         b: "c",
         c: "javascript",
@@ -8,7 +8,7 @@ const quizdb = [
         correct: "d",
     },
     {
-        question: "CSS stands for?",
+        question: "2: CSS stands for?",
         a: "cascading style sheet",
         b: "car seller shop",
         c: "cascade code set",
@@ -16,7 +16,7 @@ const quizdb = [
         correct: "a",
     },
     {
-        question: "HTML stands for?",
+        question: "3: HTML stands for?",
         a: "Hypertext markup language",
         b: "hypertext make up",
         c: "hypertextsymbolic",
@@ -24,7 +24,7 @@ const quizdb = [
         correct: "a",
     },
     {
-        question: "javascript was invented in which year?",
+        question: "4: Javascript was invented in which year?",
         a: "1995",
         b: "2000",
         c: "2005",
@@ -32,7 +32,7 @@ const quizdb = [
         correct: "a",
     },
     {
-        question: "We can use javascript externally in HTML through the tag?",
+        question: "5: We can use javascript externally in HTML through which tag?",
         a: "script",
         b: "style",
         c: "font",
@@ -48,6 +48,8 @@ const option2 = document.querySelector( "#option2" );
 const option3 = document.querySelector( "#option3" );
 const option4 = document.querySelector( "#option4" );
 const submit = document.querySelector( "#submit" );
+
+
 
 const answers = document.querySelectorAll( ".answer" );
 const showscore = document.querySelector( "#showscore" );
@@ -83,7 +85,6 @@ const deselectAll = () => {
 
 submit.addEventListener( "click", () => {
     const checkedanswer = getcheckanswer();
-    console.log( checkedanswer );
 
     if ( checkedanswer == quizdb[questionCount].correct ) {
         score++;
@@ -95,11 +96,10 @@ submit.addEventListener( "click", () => {
         loadQuestion();
     } else {
         showscore.innerHTML = `
-        <h3> You scored ${score}/${quizdb.length} keep growing</h3>
-          <button class="btn" onclick="location.reload()"> play again </button>
+        <h3> You Scored ${score}/${quizdb.length} <br> Good luck </h3>
+          <button class="btn" onclick="location.reload()"> Try Again </button>
        `;
         showscore.classList.remove( "scorearea" );
-
     }
 
 } );
